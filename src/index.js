@@ -11,6 +11,7 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import getElements from './modules/redux/sagas/getElements.saga';
 import { takeEvery } from 'redux-saga/effects';
+import postElements from './modules/redux/sagas/postElements.saga';
 
 // Create the rootSaga generator function
 function* rootSaga() {
