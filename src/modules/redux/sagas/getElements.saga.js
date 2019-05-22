@@ -4,7 +4,6 @@ import axios from 'axios';
 function* getElements() {
     try {
         const elementResponse = yield axios.get('/fruit');
-        console.log(elementResponse);
         yield put({
             type: 'SET_BASKET',
             payload: elementResponse.data

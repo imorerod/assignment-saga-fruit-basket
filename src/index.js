@@ -16,6 +16,7 @@ import postElements from './modules/redux/sagas/postElements.saga';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_ELEMENTS', getElements);
+    yield takeEvery('POST_FRUIT', postElements);
 }
 
 // Create sagaMiddleware

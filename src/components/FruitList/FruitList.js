@@ -11,7 +11,7 @@ class FruitList extends Component {
         this.props.dispatch({
             type: 'FETCH_ELEMENTS'
           })
-
+    }
         // axios({
         //     method: 'GET',
         //     url: '/fruit'
@@ -21,7 +21,6 @@ class FruitList extends Component {
         // }).catch((error) => {
         //     alert('Unable to get basket from server');
         // });
-    }
 
     render() {
         return (

@@ -6,17 +6,21 @@ class FruitSelector extends Component {
 
     // Currying that returns a function
     addFruit = (fruitName) => (event) => {
-        axios({
-            method: 'POST',
-            url: '/fruit',
-            data: { fruit: fruitName }
-        }).then((response) => {
-            this.getFruit();
-        }).catch((error) => {
-            console.log(error);
-            alert('Unable to save fruit');
-        });
+        this.props.dispatch({
+            type: 'POST_FRUIT',
+            payload: { fruit: fruitName}
+            })
     }
+        // axios({
+        //     method: 'POST',
+        //     url: '/fruit',
+        //     data: { fruit: fruitName }
+        // }).then((response) => {
+        //     this.getFruit();
+        // }).catch((error) => {
+        //     console.log(error);
+        //     alert('Unable to save fruit');
+        // });
 
     getFruit() {
         this.props.dispatch({
@@ -40,7 +44,7 @@ class FruitSelector extends Component {
             <div>
                 <button onClick={this.addFruit('Apple')}>Add Apple</button>
                 <button onClick={this.addFruit('Orange')}>Add Orange</button>
-                <button onClick={this.addFruit('Watermelon')}>Add Watermellon</button>
+                <button onClick={this.addFruit('Watermelon')}>Add Watermelon</button>
                 <button onClick={this.addFruit('Grapefruit')}>Add Grapefruit</button>
             </div>
         )
