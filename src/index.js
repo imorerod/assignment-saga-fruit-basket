@@ -12,11 +12,13 @@ import createSagaMiddleware from 'redux-saga';
 import getFruit from './modules/redux/sagas/getFruit.saga';
 import { takeEvery } from 'redux-saga/effects';
 import postFruit from './modules/redux/sagas/postFruit.saga';
+import deleteFruit from './modules/redux/sagas/deleteFruit.saga';
 
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('GET_FRUIT', getFruit);
     yield takeEvery('POST_FRUIT', postFruit);
+    yield takeEvery('DELETE_FRUIT', deleteFruit);
 }
 
 // Create sagaMiddleware
