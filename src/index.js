@@ -9,14 +9,14 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
-import getElements from './modules/redux/sagas/getElements.saga';
+import getFruit from './modules/redux/sagas/getFruit.saga';
 import { takeEvery } from 'redux-saga/effects';
-import postElements from './modules/redux/sagas/postElements.saga';
+import postFruit from './modules/redux/sagas/postFruit.saga';
 
 // Create the rootSaga generator function
 function* rootSaga() {
-    yield takeEvery('FETCH_ELEMENTS', getElements);
-    yield takeEvery('POST_FRUIT', postElements);
+    yield takeEvery('GET_FRUIT', getFruit);
+    yield takeEvery('POST_FRUIT', postFruit);
 }
 
 // Create sagaMiddleware

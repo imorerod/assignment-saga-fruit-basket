@@ -17,7 +17,7 @@ class FruitItem extends Component {
 
     getFruit() {
             this.props.dispatch({
-              type: 'FETCH_ELEMENTS'
+              type: 'GET_FRUIT'
             })
         
         // axios({

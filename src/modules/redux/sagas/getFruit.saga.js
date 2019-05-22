@@ -1,16 +1,16 @@
 import { put } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* getElements() {
+function* getFruit() {
     try {
-        const elementResponse = yield axios.get('/fruit');
+        const fruitResponse = yield axios.get('/fruit');
         yield put({
             type: 'SET_BASKET',
-            payload: elementResponse.data
+            payload: fruitResponse.data
         })
     } catch (err) {
         console.log('error HELP:', err);
     }
 }
 
-export default getElements;
+export default getFruit;
