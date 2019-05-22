@@ -9,10 +9,12 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
+import getElements from './modules/redux/sagas/getElements.saga';
+import { takeEvery } from 'redux-saga/effects';
 
 // Create the rootSaga generator function
 function* rootSaga() {
-
+    yield takeEvery('FETCH_ELEMENTS', getElements);
 }
 
 // Create sagaMiddleware
